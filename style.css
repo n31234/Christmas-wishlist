@@ -1,0 +1,431 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f5eee2;
+    color: #263b2d;
+}
+
+header {
+    background: #a51f32;
+    color: white;
+    text-align: center;
+    padding: 45px 20px;
+}
+
+header h1 {
+    font-size: 36px;
+}
+
+header p {
+    font-size: 18px;
+}
+
+main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+h2 {
+    text-align: center;
+    color: #a51f32;
+    font-size: 30px;
+}
+
+#gift-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+footer {
+    background: #17452d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+}
+
+#gift-list > div {
+    background: white;
+    border-radius: 12px;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#gift-list img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+#gift-list h3 {
+    color: #17452d;
+}
+
+#gift-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    max-width: 450px;
+    margin: 20px auto 40px;
+}
+
+#gift-form input,
+#gift-form select,
+#gift-form button {
+    padding: 13px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+#gift-form button {
+    background: #17452d;
+    color: white;
+    cursor: pointer;
+}
+
+#gift-form button:hover {
+    background: #236b43;
+}
+#gift-list button {
+    background: #a51f32;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+#gift-list button:hover {
+    background: #7c1424;
+}
+#gift-form input,
+#gift-form select {
+    background: white;
+    color: #263b2d;
+    border: 1px solid #aaa;
+}
+
+#gift-form input::placeholder {
+    color: #777;
+    opacity: 1;
+}
+
+#gift-form select option {
+    color: #263b2d;
+    background: white;
+}
+#lock-button {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 22px;
+    background: #17452d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.gift-actions {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.gift-actions a {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #17452d;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+}
+
+.gift-actions button {
+    margin-top: 0;
+}
+#wishlist-total {
+    text-align: center;
+    color: #17452d;
+    background: white;
+    padding: 18px;
+    border-radius: 12px;
+    margin: 25px auto;
+    max-width: 450px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+#countdown {
+    background: #17452d;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 25px auto;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+#countdown h2 {
+    color: white;
+    margin-top: 0;
+}
+
+#countdown-timer {
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+#wishlist-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    max-width: 600px;
+    margin: 25px auto;
+}
+
+.stat-card {
+    background: white;
+    padding: 18px;
+    text-align: center;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.stat-card h3 {
+    color: #17452d;
+    font-size: 16px;
+}
+
+.stat-card p {
+    color: #a51f32;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 0;
+}
+
+@media (max-width: 450px) {
+    #wishlist-stats {
+        grid-template-columns: 1fr;
+    }
+}
+/* Tab navigation */
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 25px auto;
+}
+
+.tab-button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    background: white;
+    color: #17452d;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.tab-button.active {
+    background: #17452d;
+    color: white;
+}
+
+/* Hide inactive tabs */
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Realistic Christmas snowfall */
+body::before {
+    content: "";
+    position: fixed;
+    top: -200px;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 400px);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.8;
+
+    background-image:
+        radial-gradient(3px 3px at 20px 30px, white 98%, transparent),
+        radial-gradient(4px 4px at 100px 80px, white 98%, transparent),
+        radial-gradient(2px 2px at 150px 150px, white 98%, transparent),
+        radial-gradient(3px 3px at 50px 180px, white 98%, transparent);
+
+    background-size: 200px 200px;
+    animation: snowfall 8s linear infinite;
+}
+
+@keyframes snowfall {
+    0% {
+        transform: translate(0, 0);
+    }
+    25% {
+        transform: translate(25px, 100px);
+    }
+    50% {
+        transform: translate(-20px, 200px);
+    }
+    75% {
+        transform: translate(20px, 300px);
+    }
+    100% {
+        transform: translate(-10px, 400px);
+    }
+}
+/* Christmas lights */
+.christmas-lights {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    height: 45px;
+    border-top: 5px solid #17452d;
+    padding-top: 8px;
+    margin-bottom: 10px;
+}
+
+.christmas-lights span {
+    width: 15px;
+    height: 23px;
+    border-radius: 50% 50% 45% 45%;
+    background: #e63946;
+    box-shadow: 0 0 12px currentColor;
+    animation: twinkle 1.5s infinite alternate;
+}
+
+.christmas-lights span:nth-child(2n) {
+    background: #ffd60a;
+    color: #ffd60a;
+    animation-delay: 0.5s;
+}
+
+.christmas-lights span:nth-child(3n) {
+    background: #2dc653;
+    color: #2dc653;
+    animation-delay: 1s;
+}
+
+.christmas-lights span:nth-child(4n) {
+    background: #4895ef;
+    color: #4895ef;
+    animation-delay: 0.8s;
+}
+
+@keyframes twinkle {
+    from {
+        opacity: 0.4;
+        filter: brightness(0.7);
+    }
+    to {
+        opacity: 1;
+        filter: brightness(1.8);
+    }
+}
+/* Glowing Christmas gift cards */
+.gift-card {
+    border: 2px solid #d4af37;
+    box-shadow:
+        0 0 10px rgba(212, 175, 55, 0.4),
+        0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gift-card:hover {
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 15px rgba(212, 175, 55, 0.8),
+        0 8px 20px rgba(0, 0, 0, 0.2);
+}
+/* Budget tracker */
+.budget-card {
+    background: white;
+    max-width: 450px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #d4af37;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.budget-card input {
+    padding: 12px;
+    width: 80%;
+    border: 1px solid #aaa;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.budget-card button {
+    padding: 12px 20px;
+    margin: 12px;
+    background: #17452d;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.budget-bar {
+    height: 22px;
+    background: #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+#budget-progress {
+    height: 100%;
+    width: 0%;
+    background: #2dc653;
+    transition: width 0.4s;
+}
+
+#budget-message {
+    font-weight: bold;
+    margin-top: 15px;
+}
+/* Budget gift suggestions */
+.budget-suggestions {
+    max-width: 650px;
+    margin: 30px auto;
+    text-align: center;
+}
+
+.suggestion-card {
+    background: white;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 12px;
+    border: 2px solid #d4af37;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.suggestion-card h3 {
+    color: #17452d;
+}
+
+.suggestion-price {
+    color: #a51f32;
+    font-weight: bold;
+}

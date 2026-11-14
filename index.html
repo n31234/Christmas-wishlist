@@ -1,0 +1,210 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Christmas Wishlist</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- CHRISTMAS LIGHTS -->
+    <div class="christmas-lights">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <h1>🎄 My Christmas Wishlist 🎄</h1>
+        <p>All I want for Christmas!</p>
+    </header>
+
+    <!-- NAVIGATION TABS -->
+    <div class="tabs">
+        <button class="tab-button active" data-tab="wishlist">
+            🎁 Wishlist
+        </button>
+
+        <button class="tab-button" data-tab="statistics">
+            📊 Statistics
+        </button>
+
+        <button class="tab-button" data-tab="budget">
+            💰 Budget
+        </button>
+    </div>
+
+    <!-- WISHLIST TAB -->
+    <div id="wishlist-tab" class="tab-content active">
+
+        <div id="countdown">
+            <h2>🎅 Christmas Countdown</h2>
+            <div id="countdown-timer">Loading...</div>
+        </div>
+
+        <h2 id="wishlist-total">Total: $0.00</h2>
+
+        <button id="lock-button" type="button">
+            🔒 Finalize Wishlist
+        </button>
+
+        <!-- ADD GIFT FORM -->
+        <section id="add-gift-section">
+            <h2>✨ Add a Gift ✨</h2>
+
+            <form id="gift-form">
+                <input
+                    id="gift-name"
+                    type="text"
+                    placeholder="Gift name"
+                    required
+                >
+
+                <input
+                    id="gift-price"
+                    type="text"
+                    placeholder="Price"
+                    required
+                >
+
+                <input
+                    id="gift-image"
+                    type="url"
+                    placeholder="Image URL"
+                >
+
+                <input
+                    id="gift-link"
+                    type="url"
+                    placeholder="Product link (optional)"
+                >
+
+                <select id="gift-priority">
+                    <option value="HIGH">High Priority</option>
+                    <option value="MEDIUM">Medium Priority</option>
+                    <option value="LOW">Low Priority</option>
+                </select>
+
+                <button type="submit">🎁 Add Gift</button>
+            </form>
+        </section>
+
+        <!-- GIFTS -->
+        <div id="gift-list"></div>
+
+    </div>
+
+    <!-- STATISTICS TAB -->
+    <div id="statistics-tab" class="tab-content">
+
+        <h2>📊 Wishlist Statistics</h2>
+
+        <div id="wishlist-stats">
+
+            <div class="stat-card">
+                <h3>🎁 Total Gifts</h3>
+                <p id="total-gifts">0</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>💰 Total Cost</h3>
+                <p id="stats-cost">$0.00</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>📈 Average Price</h3>
+                <p id="average-price">$0.00</p>
+            </div>
+
+            <div class="stat-card">
+                <h3>⭐ High Priority</h3>
+                <p id="high-priority">0</p>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BUDGET TAB -->
+    <div id="budget-tab" class="tab-content">
+
+        <h2>💰 Christmas Budget Tracker</h2>
+
+        <div class="budget-card">
+
+            <h3>Your Budget</h3>
+
+            <input
+                type="number"
+                id="budget-input"
+                placeholder="Enter your budget"
+                min="0"
+            >
+
+            <button id="save-budget" type="button">
+                Save Budget
+            </button>
+
+            <h3>Budget Summary</h3>
+
+            <p>
+                Total Budget:
+                <span id="budget-total">$0.00</span>
+            </p>
+
+            <p>
+                Wishlist Cost:
+                <span id="budget-spent">$0.00</span>
+            </p>
+
+            <p>
+                Money Left:
+                <span id="budget-left">$0.00</span>
+            </p>
+
+            <div class="budget-bar">
+                <div id="budget-progress"></div>
+            </div>
+
+            <p id="budget-message">
+                Set your budget to get started!
+            </p>
+
+        </div>
+
+        <!-- BUDGET GIFT SUGGESTIONS -->
+        <div class="budget-suggestions">
+
+            <h2>🎁 What Can I Buy?</h2>
+
+            <p>
+                Wishlist gifts you can afford with your budget:
+            </p>
+
+            <div id="suggestion-list"></div>
+
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>buy the stuff okayyyy</p>
+    </footer>
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
