@@ -1,25 +1,23 @@
 
 // STARTER GIFTS
 const starterGifts = [
-    {
-        name: "Gaming PC RAM",
-        price: "$100",
-        priority: "HIGH",
-        image: "https://placehold.co/300x200?text=RAM",
-        link: ""
-    },
-    {
-        name: "New Gaming Headset",
-        price: "$80",
-        priority: "MEDIUM",
-        image: "https://placehold.co/300x200?text=Headset",
-        link: ""
-    }
+    { name: "Candy", price: "10$", image: "https://tint.creativemarket.com/vp8w9YMGRUjXwYoEN2PofwvBChsKmDXoE7vpFEY3gDk/width:1360/height:906/gravity:nowe/rt:fill-down/el:1/preset:cm_watermark_retina/czM6Ly9maWxlcy5jcmVhdGl2ZW1hcmtldC5jb20vaW1hZ2VzL3NjcmVlbnNob3RzL3Byb2R1Y3RzLzIyNi8yMjY0LzIyNjQ4MTYvZmd4cmc1aDZoaWVweXhpa3A0dTRubHJ6bnNiNGp6bXRmem96dmVzejVkOXpxdGhmdjdlMmk2cjc4ZWlzZ3A5ai1vLmpwZw", link: "", priority: "LOW" },
+    { name: "GeIL ORION 32GB (2 x 16GB) DDR4 3200", price: "299$", image: "https://i5.walmartimages.ca/asr/abf1b10d-5451-4e52-be95-187469097f14.2db4b0ac007a58eab1938a09aee22440.jpeg?odnHeight=640&odnWidth=640&odnBg=FFFFFF", link: "https://www.walmart.ca/en/ip/GeIL-ORION-32GB-2-x-16GB-DDR4-3200-PC4-25600-Desktop-Memory-Model-GAOG432GB3200C18ADC/18QK1ZL11WSN", priority: "HIGH" },
+    { name: "Apple airpod 5s", price: "209", image: "https://store.storeimages.cdn-apple.com/1/as-images.apple.com/is/airpods-5-wcc-select-202609_FV1?wid=976&hei=916&fmt=jpeg&qlt=90", link: "https://www.apple.com/ca/shop/buy-airpods/airpods-5/with-wireless-charging-case", priority: "MEDIUM" },
+    { name: "JETech Magnetic Matte Case for iPhone 14 Pro, Gray", price: "18$", image: "https://m.media-amazon.com/images/I/61CAiSY11dL._AC_SL1500_.jpg", link: "https://www.amazon.ca/dp/B0CFX89FB2", priority: "HIGH" },
+    { name: "Roblox Gift card", price: "25$", image: "https://m.media-amazon.com/images/I/71vylKGZi5L._AC_SY445_SX342_QL70_ML2_.jpg", link: "https://www.amazon.ca/dp/B0BMGZKFBC", priority: "LOW" },
+    { name: "SteelSeries QcK Pro Gaming Mouse Pad", price: "15", image: "https://m.media-amazon.com/images/I/317YExt7tZL._AC_SL1050_.jpg", link: "https://www.bestbuy.ca/en-ca/product/steelseries-steelseries-qck-pro-gaming-mouse-pad-qck-gaming-mouse-pad/10133041", priority: "MEDIUM" },
+    { name: "Ryzen 5600X + 2 year warranty", price: "200$", image: "https://c1.neweggimages.com/productimage/nb1280/19-113-666-V01.jpg", link: "https://www.newegg.ca/amd-ryzen-5-5000-series-ryzen-5-5600x-vermeer-socket-am4-desktop-cpu-processor/p/N82E16819113666", priority: "HIGH" },
+    { name: "Razer DeathAdder V3", price: "80", image: "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/79217ae9-c230-4f9b-9efc-79ea16361dde.jpg", link: "https://www.bestbuy.ca/en-ca/product/razer-deathadder-v3-30000-dpi-optical-gaming-mouse-black/16703320", priority: "MEDIUM" },
+    { name: "Desk", price: "110", image: "https://m.media-amazon.com/images/I/51gRbfaJIzL._AC_SL1080_.jpg", link: "https://www.amazon.ca/dp/B0FKW26QJK", priority: "HIGH" },
+    { name: "Under Monitor RGB Screen Bar", price: "27", image: "https://m.media-amazon.com/images/I/71nmuym8yQL._AC_SL1500_.jpg", link: "https://www.amazon.ca/dp/B0BL35N8QS", priority: "LOW" }
 ];
 
 // LOAD SAVED GIFTS
 let gifts = JSON.parse(localStorage.getItem("gifts")) || starterGifts;
-let isLocked = localStorage.getItem("wishlistLocked") === "true";
+let isLocked = localStorage.getItem("wishlistLocked") === null
+    ? true
+    : localStorage.getItem("wishlistLocked") === "true";
 
 // CONNECT HTML ELEMENTS
 const giftList = document.getElementById("gift-list");
